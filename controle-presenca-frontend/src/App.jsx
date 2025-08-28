@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Turmas from './components/Turmas';
-import Alunos from './components/Alunos';
-import Presencas from './components/Presencas';
-import Layout from './components/Layout';
+import Dashboard from './components/Dashboard.jsx';
+import TurmasPage from './components/TurmasPage.jsx';        // ← Correto
+import AlunosPage from './components/AlunosPage.jsx';        // ← Correto  
+import PresencasPage from './components/PresencasPage.jsx';  // ← Correto
+import Layout from './components/Layout.jsx';
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
-          <Route path="turmas" element={<Turmas />} />
-          <Route path="alunos" element={<Alunos />} />
-          <Route path="presencas" element={<Presencas />} />
+          <Route path="turmas" element={<TurmasPage />} />      {/* ← Correto */}
+          <Route path="alunos" element={<AlunosPage />} />      {/* ← Correto */}
+          <Route path="presencas" element={<PresencasPage />} />{/* ← Correto */}
           <Route path="*" element={<div>Página não encontrada</div>} />
         </Route>
       </Routes>
