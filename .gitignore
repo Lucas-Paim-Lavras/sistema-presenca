@@ -1,0 +1,23 @@
+# Maven
+target/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# IDE
+.idea/
+*.iml
+*.classpath
+*.project
+.settings/
+
+# Logs
+*.log
+logs/
+
+# Outros
+.DS_Store
+Thumbs.dbtarget/
+*.jar
