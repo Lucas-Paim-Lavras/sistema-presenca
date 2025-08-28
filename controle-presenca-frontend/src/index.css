@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for transparent modal backdrop */
+.fixed.inset-0.z-50.bg-background\/80.backdrop-blur-sm {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+
+.fixed.inset-0.z-50.bg-black\/80.backdrop-blur-sm {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+}
+
+
