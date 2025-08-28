@@ -1,34 +1,25 @@
-import { useState } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css'
-
-// Componentes
-import Layout from './components/Layout'
-import Dashboard from './components/Dashboard'
-import TurmasPage from './components/TurmasPage'
-import AlunosPage from './components/AlunosPage'
-import PresencasPage from './components/PresencasPage'
-import MentoresPage from './components/MentoresPage'
-import ChamadasMentoresPage from './components/ChamadasMentoresPage'
-import RelatoriosPage from './components/RelatoriosPage'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Dashboard from './components/Dashboard';
+import Turmas from './components/Turmas';
+import Alunos from './components/Alunos';
+import Presencas from './components/Presencas';
+import Layout from './components/Layout';
 
 function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/turmas" element={<TurmasPage />} />
-          <Route path="/alunos" element={<AlunosPage />} />
-          <Route path="/presencas" element={<PresencasPage />} />
-          <Route path="/mentores" element={<MentoresPage />} />
-          <Route path="/chamadas-mentores" element={<ChamadasMentoresPage />} />
-          <Route path="/relatorios" element={<RelatoriosPage />} />
-        </Routes>
-      </Layout>
-    </Router>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="turmas" element={<Turmas />} />
+          <Route path="alunos" element={<Alunos />} />
+          <Route path="presencas" element={<Presencas />} />
+          <Route path="*" element={<div>Página não encontrada</div>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
-
+export default App;
